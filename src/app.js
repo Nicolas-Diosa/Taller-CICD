@@ -1,12 +1,19 @@
 const express = require('express');
+const { version } = require('./package.json');
 const app = express();
 
 app.get('/', (req, res) => {
     res.json({ message: 'Hola, DevOps!' });
 });
+
 app.get('/health', (req, res) => {
     res.json({ status: 'OK', timestamp: new Date() });
 });
+
+app.get('/version', (req, res) => {
+    res.json({ version });
+});
+
 module.exports = app;
 if (require.main === module) {
     const PORT = process.env.PORT || 3000;
