@@ -1,6 +1,6 @@
 const request = require('supertest');
 const app = require('../src/app');
-const { version } = require('./package.json');
+const { version } = require('../package.json');
 
 describe('API Endpoints', () => {
     test('GET / should return welcome message', async() => {
@@ -18,6 +18,6 @@ describe('API Endpoints', () => {
     test('GET /version should return version', async() => {
         const respond = await request(app).get('/version');
         expect(respond.status).toBe(200);
-        expect(respond.version).toBe(version);
+        expect(respond.body.version).toBe(version);
     });
 });
