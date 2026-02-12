@@ -4,7 +4,9 @@
   "description": "Repositorio para el taller CICD del grupo #3:\r - _Juan Felipe Fajardo Garzón_\r - _Nicolás Alejandro Diosa_\r - _Juan Camilo Camargo_",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/app.js",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "repository": {
     "type": "git",
